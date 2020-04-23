@@ -1,4 +1,8 @@
 if [ "$AMPHIPRION" != "off" ] ; then
-  echo 'amphprn &'
+  if [ "$AMPDEBUG" = "on" ] ; then
+    echo 'amphprn --debug &'
+  else 
+    echo 'amphprn &'
+  fi
 fi
 
