@@ -1,8 +1,8 @@
 if [ "$AMPHIPRION" != "off" ] ; then
   if [ "$AMPDEBUG" = "on" ] ; then
-    echo 'amphprn --debug &'
+    echo 'supervisord --loglevel=DEBUG'
   else 
-    echo 'amphprn &'
+    echo 'supervisord'
   fi
 fi
 
