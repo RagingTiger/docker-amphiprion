@@ -1,10 +1,10 @@
 if [ "$AMPHIPRION" != "off" ] && [ "$DOCKER_STATE" = "RUN" ]; then
   # check debug
   if [ "$AMPDEBUG" = "on" ] ; then
-    echo 'supervisord --loglevel=DEBUG'
+    supervisord -c /etc/supervisor/supervisord.conf --loglevel=DEBUG
 
   else
-    echo 'supervisord'
+    supervisord -c /etc/supervisor/supervisord.conf
   fi
   echo 'AMPHIPRION=off' > /root/amphprn.sh
 fi
